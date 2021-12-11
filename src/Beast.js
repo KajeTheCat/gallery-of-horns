@@ -5,7 +5,7 @@ render() {
     return (
     <>
         <h1>Title: {this.props.title}</h1>
-        <p>I can put any text {this.props.description}</p>
+        <p>This is a Test!{this.props.description}</p>
     </>
     )
 }
