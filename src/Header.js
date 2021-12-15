@@ -1,11 +1,14 @@
 import React from 'react';
+import Navbar from 'react-bootstrap/Navbar';
 
 class Header extends React.Component {
 render() {
     return (
-    <>
-    <h1>Horned Beast Bestiary</h1>
-    </>
+    <Navbar>
+        <Navbar.Brand>
+            <h1>{this.props.title}</h1>
+        </Navbar.Brand>
+    </Navbar>
     )
 }
 };
