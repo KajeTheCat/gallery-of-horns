@@ -1,29 +1,31 @@
 import React from 'react';
+import Image from 'react-bootstrap/Image';
 
 class BeastImg extends React.Component {
+
     constructor(props) {
         super(props);
-        this.state= {
-            'status': 'YAY!'
+        this.state = {
+            "status": 0,
         }
     }
 
     handleClick = () => {
-        if (this.state.status === 'Nay!') {
-            this.setState({status: 'YAY!'})
-        } else {
-            this.setState({status: 'Nay!'})
-            }
-        }
+        this.setState({
+            status: this.state.status + 1,
+        });
+    }
 
-render() {
-    return (
-    <>
-        <img src={this.props.image_url} alt='alt coming soon...' onClick={this.handleClick} />
-        <h3>{this.state.status}</h3>
-    </>
-    )
-}
+    render() {
+        return (
+            <>
+                <div onClick={this.handleClick}>
+                    <Image src={this.props.image_url} alt='alt coming soon...' rounded fluid  />
+                    <h3>💖{this.state.status}</h3>
+                </div>
+            </>
+        )
+    }
 };
 
 export default BeastImg;

@@ -1,11 +1,14 @@
 import React from 'react';
+import Navbar from 'react-bootstrap/Navbar';
 
 class Footer extends React.Component {
-render() {
+    render() {
     return (
-    <>
-    <p>This article was written by Jacob Amsbury</p>
-    </>
+    <Navbar className="footer">
+        <Navbar.Brand>
+        <h1>{this.props.text}</h1>
+        </Navbar.Brand>
+    </Navbar>
     )
 }
 };

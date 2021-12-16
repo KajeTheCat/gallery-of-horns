@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 class Header extends React.Component {
 render() {
     return (
-    <Navbar>
+    <Navbar className='header'>
         <Navbar.Brand>
             <h1>{this.props.title}</h1>
         </Navbar.Brand>
