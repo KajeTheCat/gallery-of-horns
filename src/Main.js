@@ -1,20 +1,58 @@
 import React from 'react';
-import Beast from './Beast';
-import dragon from './imgs/dragon.jpg'
-import minotaur from './imgs/minotaur.jpg'
-import unicorn from './imgs/unicorn.jpg'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import BeastImg from "./BeastImg.js";
 
 class Main extends React.Component {
   render() {
     return (
-      <>
-        <p>Fantasy Creatures:</p>
-        <Beast title={'Unicorn'} description={'These beautiful horses have one horn, and only only exist in fantasy settings!'} img_url={unicorn}/>
-        <Beast title={'Minotaur'} description={'These monstrous beings have two horns. They only exist in fantasy settings'} img_url={minotaur}/>
-        <Beast title={'Dragon'} description={'These majestic beings can come with one, two, or no horns. They only exist in fantasy settings!'} img_url={dragon}/>
-      </>
+      <Container className="main">
+        <Row>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[0].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[1].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[2].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[3].image_url} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[4].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[5].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[6].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[7].image_url} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[8].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[9].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[10].image_url} />
+          </Col>
+          <Col>
+            <BeastImg image_url={this.props.imageURLs[11].image_url} />
+          </Col>
+        </Row>
+      </Container>
     )
-  }
+  };
 };
 
 export default Main;
