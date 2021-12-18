@@ -1,16 +1,13 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
 
 class Header extends React.Component {
-render() {
-    return (
-    <Navbar className='header'>
-        <Navbar.Brand>
-            <h1>{this.props.title}</h1>
-        </Navbar.Brand>
-    </Navbar>
-    )
+    render() {
+        return (
+            <>
+                <h1>Gallery Of Horns</h1>
+            </>
+        )
+    }
 }
-};
 
 export default Header;
