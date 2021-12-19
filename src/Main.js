@@ -12,7 +12,7 @@ class Main extends React.Component {
       <Container>
         <Row sm={1} md={2} lg={3} xl={4} >
           {beastData.map((beastObj, idx) => (
-            <HornedBeast beast={beastObj} key={idx} />
+            <HornedBeast beast={beastObj} key={idx} sendBackData={this.props.sendBackData}/>
           ))}
         </Row>
       </Container>
