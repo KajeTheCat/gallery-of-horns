@@ -11,14 +11,12 @@ class SelectedBeast extends React.Component {
             <>
             <Modal show={this.props.show} onHide={this.props.onHide}>
             <Modal.Header closeButton>
-            <Modal.Title>123</Modal.Title>
+            <Modal.Title>{this.props.selectedBeast.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <Card>
-                <Card.Img src={'#'} alt={'#'} />
-                <Card.Text>
-                    ???
-                </Card.Text>
+            <Card style={{ width: '20rem'}}>
+            <Card.Img src={this.props.selectedBeast.image_url} alt={this.props.selectedBeast.title} />
+            <Card.Text>{this.props.selectedBeast.description}</Card.Text>
             </Card>
             </Modal.Body>
             <Modal.Footer>

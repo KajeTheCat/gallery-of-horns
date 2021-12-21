@@ -2,43 +2,45 @@ import React from 'react';
 import './App.css';
 import Header from './Header.js';
 import Main from './Main';
-import Footer from './Footer.js';
 import SelectedBeast from './SelectedBeast.js'
-import json from './data.json'
+import beastData from './data.json'
+import Footer from './Footer.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      status: 0,
+    this.state = {
       show: false,
-      result: (''),
+      selectedBeast: {},
     };
   }
 
-  showSelectedBeast = () => {
-    this.setState({show: true});
+  showModal = (beastTitle) => {
+    const selectedBeast = beastData.find(beastObj => beastObj.title === beastTitle)
+    this.setState({ show: true, selectedBeast: selectedBeast });
+
   }
 
   onHide = () => {
-    this.setState({show: false})
-  }
-
-  sendBackData = (title) => {
-    const result = json.find( (element) => element.title === title);
-    this.setState({result, show: true})
+    this.setState({ show: false })
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Main json = {json} showSelectedBeast={this.props.showSelectedBeast} sendBackData={this.sendBackData}/>
+        <Main
+          beastData={beastData}
+          showModal={this.showModal} />
+        <SelectedBeast
+          show={this.state.show}
+          onHide={this.onHide}
+          selectedBeast={this.state.selectedBeast}
+        />
         <Footer />
-        <SelectedBeast show={this.state.show} onHide={this.onHide} result={this.state.result} />
       </div>
-  );
-}
+    );
+  }
 }
 
 export default App;
