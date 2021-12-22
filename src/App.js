@@ -18,7 +18,6 @@ class App extends React.Component {
   showModal = (beastTitle) => {
     const selectedBeast = beastData.find(beastObj => beastObj.title === beastTitle)
     this.setState({ show: true, selectedBeast: selectedBeast });
-
   }
 
   onHide = () => {
