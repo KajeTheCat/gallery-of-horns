@@ -19,6 +19,9 @@ class Search extends React.Component {
         } else if (selection === "Three") {
             updatedNums = beastData.filter(beastHorns => beastHorns.horns === 3);
             this.props.findBeast(updatedNums);
+        } else if (selection === "100") {
+            updatedNums = beastData.filter(beastHorns => beastHorns.horns === 100);
+            this.props.findBeast(updatedNums);
         } else {
             this.props.findBeast(beastData);
         };
@@ -35,6 +38,7 @@ class Search extends React.Component {
                         <option value="One">One Horn</option>
                         <option value="Two">Two Horns</option>
                         <option value="Three">Three Horns</option>
+                        <option value="100">100 Horns</option>
                     </Form.Select>
                 </Form>
             </div>
