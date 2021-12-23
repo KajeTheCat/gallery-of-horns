@@ -16,7 +16,7 @@ class SelectedBeast extends React.Component {
             <Modal.Body>
             <Card style={{ width: '20rem'}}>
             <Card.Img src={this.props.selectedBeast.image_url} alt={this.props.selectedBeast.title} />
-            <Card.Text>{this.props.selectedBeast.horns}</Card.Text>
+            <Card.Text>Number of horns:{this.props.selectedBeast.horns}</Card.Text>
             <Card.Text>{this.props.selectedBeast.description}</Card.Text>
             </Card>
             </Modal.Body>

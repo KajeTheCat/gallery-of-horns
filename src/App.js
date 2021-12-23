@@ -13,11 +13,12 @@ class App extends React.Component {
     this.state = {
       show: false,
       selectedBeast: {},
+      gallery: beastData
     };
   }
 
-  searchEngine = (horns) => {
-    
+  searchEngine = (filteredBeastArray) => {
+    this.setState({ gallery: filteredBeastArray });
   }
 
   showModal = (beastTitle) => {
@@ -33,9 +34,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
+          <Search findBeast={this.searchEngine}/>
         <Main
-          beastData={beastData}
-          showModal={this.showModal} />
+          beastData={this.state.gallery}
+          showModal={this.showModal}
+          />
         <SelectedBeast
           show={this.state.show}
           onHide={this.onHide}
