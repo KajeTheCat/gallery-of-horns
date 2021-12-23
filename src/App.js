@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header.js';
 import Main from './Main';
+import Search from './Search'
 import SelectedBeast from './SelectedBeast.js'
 import beastData from './data.json'
 import Footer from './Footer.js';
@@ -13,6 +14,10 @@ class App extends React.Component {
       show: false,
       selectedBeast: {},
     };
+  }
+
+  searchEngine = (horns) => {
+    
   }
 
   showModal = (beastTitle) => {
