@@ -21,6 +21,7 @@ class HornedBeast extends React.Component {
             <Card.Title>{this.props.beast.title}</Card.Title>
             <Card.Img src={this.props.beast.image_url} alt={this.props.beast.title} title={this.props.beast.title} onClick={this.addFavorites} />
             <Card.Text>{this.props.beast.description}</Card.Text>
+            <Card.Text>Number of horns:{this.props.beast.horns}</Card.Text>
             <Card.Text>💖 = {this.state.favorites}</Card.Text>
             </Card>
         )

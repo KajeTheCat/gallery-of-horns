@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header.js';
 import Main from './Main';
+import Search from './Search'
 import SelectedBeast from './SelectedBeast.js'
 import beastData from './data.json'
 import Footer from './Footer.js';
@@ -12,7 +13,12 @@ class App extends React.Component {
     this.state = {
       show: false,
       selectedBeast: {},
+      gallery: beastData
     };
+  }
+
+  searchEngine = (filteredBeastArray) => {
+    this.setState({ gallery: filteredBeastArray });
   }
 
   showModal = (beastTitle) => {
@@ -28,9 +34,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
+          <Search findBeast={this.searchEngine}/>
         <Main
-          beastData={beastData}
-          showModal={this.showModal} />
+          beastData={this.state.gallery}
+          showModal={this.showModal}
+          />
         <SelectedBeast
           show={this.state.show}
           onHide={this.onHide}
